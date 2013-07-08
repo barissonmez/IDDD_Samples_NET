@@ -11,8 +11,8 @@ namespace SaaSOvation.Collaboration.Application.Calendars
 {
     public class CalendarQueryService : AbstractQueryService
     {
-        public CalendarQueryService(string providerName, string connectionString)
-            : base(connectionString, providerName)
+        public CalendarQueryService(DataSource dataSource)
+            : base(dataSource)
         {
         }
 

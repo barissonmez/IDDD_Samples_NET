@@ -13,11 +13,11 @@ namespace SaaSOvation.Collaboration.Application.Calendars
 {
     public class CalendarApplicationService
     {
-        public CalendarApplicationService(ICalendarRepository calendarRepository, ICalendarEntryRepository calendarEntryRepository, CalendarIdentityService calendarIdentityService, ICollaboratorService collaboratorService)
+        public CalendarApplicationService(ICalendarRepository calendarRepository, ICalendarEntryRepository calendarEntryRepository, ICollaboratorService collaboratorService)
         {
             this.calendarRepository = calendarRepository;
             this.calendarEntryRepository = calendarEntryRepository;
-            this.calendarIdentityService = calendarIdentityService;
+            this.calendarIdentityService = new CalendarIdentityService(calendarRepository, calendarEntryRepository);
             this.collaboratorService = collaboratorService;
         }
 

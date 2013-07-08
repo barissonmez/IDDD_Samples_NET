@@ -11,8 +11,8 @@ namespace SaaSOvation.Collaboration.Application.Forums
 {
     public class ForumQueryService : AbstractQueryService
     {
-        public ForumQueryService(string connectionString, string providerName)
-            : base(connectionString, providerName)
+        public ForumQueryService(DataSource dataSource)
+            : base(dataSource)
         {
         }
 

@@ -13,14 +13,12 @@ namespace SaaSOvation.Common.Port.Adapters.Persistence
     /// </summary>
     public abstract class AbstractQueryService
     {
-        public AbstractQueryService(string connectionString, string providerName)
+        public AbstractQueryService(DataSource dataSource)
         {
-            this.providerFactory = DbProviderFactories.GetFactory(providerName);
-            this.connectionString = connectionString;
+            this.dataSource = dataSource;
         }
 
-        readonly DbProviderFactory providerFactory;
-        readonly string connectionString;
+        readonly DataSource dataSource;
 
         protected T QueryObject<T>(string query, JoinOn joinOn, params object[] arguments)
         {
@@ -94,10 +92,7 @@ namespace SaaSOvation.Common.Port.Adapters.Persistence
 
         DbConnection CreateOpenConnection()
         {
-            var conn = this.providerFactory.CreateConnection();
-            conn.ConnectionString = this.connectionString;
-            conn.Open();
-            return conn;
+            return this.dataSource.CreateOpenConnection();
         }
     }
 }

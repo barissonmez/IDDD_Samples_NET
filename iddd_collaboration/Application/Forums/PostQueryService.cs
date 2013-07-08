@@ -10,8 +10,8 @@ namespace SaaSOvation.Collaboration.Application.Forums
 {
     public class PostQueryService : AbstractQueryService
     {
-        public PostQueryService(string connectionString, string providerName)
-            : base(connectionString, providerName)
+        public PostQueryService(DataSource dataSource)
+            : base(dataSource)
         {
         }
 

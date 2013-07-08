@@ -67,6 +67,7 @@
     <Compile Include="Notifications\NotificationLogId.cs" />
     <Compile Include="Notifications\NotificationLogInfo.cs" />
     <Compile Include="Port.Adapters\Persistence\AbstractQueryService.cs" />
+    <Compile Include="Port.Adapters\Persistence\DataSource.cs" />
     <Compile Include="Port.Adapters\Persistence\JoinOn.cs" />
     <Compile Include="Port.Adapters\Persistence\ResultSetObjectMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
